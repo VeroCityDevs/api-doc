@@ -14,7 +14,6 @@ pages:
   - 'Access':
     - 'Get Access Token': 'api/access/token.md'
   - 'Live Cameras': 'api/Cameras/index.md'
-  - 'Documents': 'api/ECM/index.md'
   - 'IOT':
     - 'Overview': 'api/IOT/index.md'
     - 'DataModel': 'api/IOT/datamodel.md'
