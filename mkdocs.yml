@@ -1,0 +1,28 @@
+site_name:  Vero City API Docs
+site_url: https://vero-city-api-docs.readthedocs.io/
+repo_url: https://github.com/VeroCityDevs/api-doc.git
+site_description: Vero City API Documentation
+docs_dir: docs
+site_dir: html
+markdown_extensions: [toc,fenced_code]
+use_directory_urls: false
+theme: readthedocs
+extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
+pages:
+  - 'Home': index.md
+  - 'API Overview':'api/overview.md'
+  - 'Access':
+    - 'Get Access Token' : 'api/access/token.md'
+  - 'Live Cameras': 'api/Cameras/index.md'
+  - 'Documents': 'api/ECM/index.md'
+  - 'IOT': 'api/IOT/index.md'
+    - 'DataModel': 'api/IOT/datamodel.md'
+    - 'Entities': 'api/IOT/entities.md'
+    - 'Networks': 'api/IOT/networks.md'
+    - 'Network Branchs': 'api/IOT/networkbranchs.md'
+    - 'Historical Data': 'api/IOT/history.md'
+  - 'Webgis': 'api/Webgis/index.md'
+    - 'Geo Layers': 'api/Webgis/Layers.md'
+    - 'Topics': 'api/Webgis/Topics.md'
+    - 'Subtopics': 'api/Webgis/Subtopics.md'
+  - 'Advanced Filtering': 'advanced-filtering.md'
