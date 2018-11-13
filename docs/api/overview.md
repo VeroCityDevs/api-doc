@@ -16,9 +16,9 @@ The Vero City Platform public endpoints are powered by the same underlying techn
 Below, you'll find the limits by which a single integration (as identified by an client_id) can consume the  Vero City Platform public APIs. 
 If you have any questions, please post them in the https://github.com/VeroCityDevs/api-doc/issues
 
-1. Vero City Platform has the following limits in place for API requests:
-  * 10 requests per second.
-  * 40,000 requests per day. This daily limit resets at midnight based on the time zone setting of the client ID.
+1. Vero City Platform has the following limits in place for API requests:  
+   * 10 requests per second.  
+   * 40,000 requests per day. This daily limit resets at midnight based on the time zone setting of the client ID.  
 1. Clients exceeding either of those limits will receive error responses with a 429 response code. 
 1. Requests resulting in an error response may not exceed 5% of your total requests.
 1. Integrations should use Vero City Platform's OAuth protocol.
