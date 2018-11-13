@@ -10,9 +10,9 @@ theme: readthedocs
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
 pages:
   - 'Home': index.md
-  - 'API Overview':'api/overview.md'
+  - 'API Overview': 'api/overview.md'
   - 'Access':
-    - 'Get Access Token' : 'api/access/token.md'
+    - 'Get Access Token': 'api/access/token.md'
   - 'Live Cameras': 'api/Cameras/index.md'
   - 'Documents': 'api/ECM/index.md'
   - 'IOT': 'api/IOT/index.md'
