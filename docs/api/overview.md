@@ -25,8 +25,8 @@ If you have any questions, please post them in the https://github.com/VeroCityDe
 
 ### API Limits
 Vero City Platform has the following limits in place for API requests:  
-   2. 10 requests per second.  
-   2. 40,000 requests per day. This daily limit resets at midnight based on the time zone setting of the client ID.   
+   * 10 requests per second.  
+   * 40,000 requests per day. This daily limit resets at midnight based on the time zone setting of the client ID.   
  
 
 
