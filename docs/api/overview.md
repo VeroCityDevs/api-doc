@@ -2,11 +2,42 @@
 
 
 All of the Vero City Platform APIs are organized around REST - if you've interacted with a RESTful API already, many of the concepts will be familiar to you. 
-All API calls to Vero City Platform should be made to the ``{{base_url}}`` base domain. The ``base url``,  changes for each project and it will be represented as  ``{{base_url}}`` in the documentation.
+All API calls to Vero City Platform should be made to the base domain. The base domain  changes for each project and it will be represented as  ``{{base_url}}`` in the documentation.
 
+## API Request
 We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors.   
 The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
+### Headers
+Every request should be made by HTTP request, only HTTP 1.1 is supported in this version.
+We have two required headers, the `Authorization` and the `Content-Type` and its value as `application/json` when `POST` verb:
+
+```txt
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+```
+
+> **Note:** The access token request is an exception of this rule, the `Content-Type` should be `application/x-www-form-urlencoded` and there is no `Authorization` header.
+ 
+
+
+### Post Body
+The post body should be a valid JSON string:
+
+```json
+{"key":"value"}
+```
+
+
+
+## API Response
+
+```json
+{
+    "ret": {...},
+    "message": "OK"
+}
+```
 
 
 ## API Usage Guidelines
@@ -25,8 +56,9 @@ If you have any questions, please post them in the https://github.com/VeroCityDe
 
 ### API Limits
 Vero City Platform has the following limits in place for API requests:  
-   * 10 requests per second.  
-   * 40,000 requests per day. This daily limit resets at midnight based on the time zone setting of the client ID.   
+* 50 requests per second.  
+* 100,000 requests per day. 
+This daily limit resets at midnight based on the time zone setting of the client ID.   
  
 
 
