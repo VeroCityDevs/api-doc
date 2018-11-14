@@ -4,7 +4,7 @@ The Vero City Platform can group real time cameras from different sources. The a
 and sources. 
 
 ## Data Acessible Trough this Endpoint
-In the Vero City system a real time camera consists of a specialization of a broader concept called "Resources". Each type of resource has it own attributes and caracteristics, but all of them are categorized under a category and subcategory structure. The real time cameras endpoint provides the following data for each camera:
+In the Vero City system a real time camera consists of a specialization of a broader concept called "Resources". Each type of resource has it own attributes and caracteristics, but all of them are classified under a category and subcategory structure. The real time cameras endpoint provides the following data for each camera:
 
 - id(int): The unique identification attribute. When a camera is linked to other elements of the system, this value is used to create the relationship.
 - cod (string): A unique code that fallows a predefined pattern. This is used to address each camera individually in a UI-Friendly way.
@@ -22,5 +22,5 @@ In the Vero City system a real time camera consists of a specialization of a bro
 curl --request GET \
   --url 'http://{{url}}/public/Cameras/Live/' \
   --header 'Authorization: Bearer {{access_token}}'
-  
+
 ```
