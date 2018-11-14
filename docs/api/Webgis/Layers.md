@@ -5,19 +5,58 @@ TODO: Write about layers, geojson, wms etc..
 
 
 ## List All Layers
+curl -X GET \
+  {{base_url}}/api/v1/public/webgis/layers \
+  -H 'authorization: Bearer {{access_token}}' \
+  -d '{
+	"layers":["86", "90", "91", "94", "98", "107", "155"],
+	"geometry":{"type":"Polygon","coordinates":[[[16.364994,48.213321],[16.385207,48.207716],[16.373019,48.201766],[16.364994,48.213321]]]}
+}'
+
+
+
+### Applying Filter
+
+
 
 ## Get layer information
 
+
+|  parameter | description   |
+|---|---|
+| layer_id  | Valor blablabla  |
+
+
+
+curl -X GET \
+  {{base_url}}/api/v1/public/webgis/layers/{{layer_id}} \
+  -H 'authorization: Bearer {{access_token}}' \
+  -d '{
+	"layers":["86", "90", "91", "94", "98", "107", "155"],
+	"geometry":{"type":"Polygon","coordinates":[[[16.364994,48.213321],[16.385207,48.207716],[16.373019,48.201766],[16.364994,48.213321]]]}
+}'
+
+
+
 ## Get geojson format from a geometry layer
+
+|  parameter | description   |
+|---|---|
+|   |   |
+|   |   |
+|   |   |
+
+## GeoQuery
+
+
 
 ### Polygon:
 
 ```sh
 curl -X POST \
-  http://tdp.local/api/v1/public/webgis/layers/geoQuery \
-  -H 'authorization: Bearer vVFScGYyKA20iRYp0zYFIrcKZFX0IjuJWPsbkl60' \
-  -H 'cache-control: no-cache' \
-  -H 'postman-token: 82d96196-c98e-77a1-325d-9ccb629f1cad' \
+  {{base_url}}/api/v1/public/webgis/layers/geoQuery \
+  -H 'authorization: Bearer {{access_token}}' \
+  -H 'content-type: application/json' \
   -d '{
 	"layers":["86", "90", "91", "94", "98", "107", "155"],
 	"geometry":{"type":"Polygon","coordinates":[[[16.364994,48.213321],[16.385207,48.207716],[16.373019,48.201766],[16.364994,48.213321]]]}
@@ -71,6 +110,3 @@ curl -X POST \
     "message": "OK"
 }
 ```
-
-## GeoQuery
-

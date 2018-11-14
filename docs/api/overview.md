@@ -9,7 +9,6 @@ We use many standard HTTP features, like HTTP verbs, which can be understood by 
 The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
 ### Headers
-Every request should be made by HTTP request, only HTTP 1.1 is supported in this version.
 We have two required headers, the `Authorization` and the `Content-Type` and its value as `application/json` when `POST` verb:
 
 ```txt
