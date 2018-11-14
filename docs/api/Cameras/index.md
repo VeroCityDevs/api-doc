@@ -20,7 +20,7 @@ In the Vero City system a real time camera consists of a specialization of a bro
 
 ```bash
 curl --request GET \
-  --url 'http://{{url}}/public/Cameras/Live/' \
+  --url 'http://{{base_url}}/public/Cameras/Live/' \
   --header 'Authorization: Bearer {{access_token}}'
 
 ```
