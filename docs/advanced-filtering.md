@@ -30,7 +30,7 @@ The Structured query object is an abstraction of the Structured Query Language, 
 
 
 |  Attribute | Type    |Description |Possible values|Required|
-|---|---|---|---|
+|---|---|---|---|---|
 |field|String|The name of valid attribute|Dataset attribute names| Y |
 |value|Mixed|The expected value|Any possible value| Y |
 |cond|String|Based on SQL conditions accept many all basic  conditionals symbols|=, <>, <, >,BETWEEN*,IN*,LIKE*, default: =|N|
