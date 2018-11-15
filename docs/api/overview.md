@@ -9,7 +9,8 @@ We use many standard HTTP features, like HTTP verbs, which can be understood by 
 The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
 ### Headers
-We have two required headers, the `Authorization` and the `Content-Type` and its value as `application/json` when `POST` verb:
+
+We have two required headers, the `Authorization` and the `Content-Type`(i.e. POST, PUT or PATCH), and its value as `application/json` when `POST` verb:
 
 ```txt
 Authorization: Bearer {{access_token}}
@@ -18,6 +19,34 @@ Content-Type: application/json
 
 > **Note:** The access token request is an exception of this rule, the `Content-Type` should be `application/x-www-form-urlencoded` and there is no `Authorization` header.
  
+
+## Issuing Commands to the API
+To issue requests to the API, we use the `curl` command line tool.
+We have chosen curl because it is almost ubiquitous in any GNU/Linux system and simplifies including examples in this document that can easily be copied and pasted.
+Of course, it is not mandatory to use it, you can use any REST client tool instead (e.g. Postman). 
+Indeed, in a real case, you will probably interact using a programming language library implementing the REST client part of your application.
+
+The basic patterns for all the curl examples in this document are the following:
+
+- POST:
+Verb used to create resources, but in this case of public API will be used to send advanced parameters to the endpoints
+```bash
+curl -X POST \
+  {{base_url}}/api/v1/public/{{operation_url}} \
+  -H 'authorization: Bearer {{access_token}}' \
+  -H 'content-type: application/json' \
+  -d '[JSON_PAYLOAD]'
+```
+
+- GET:
+
+```bash
+curl -X GET \
+  {{base_url}}/api/v1/public/{{operation_url}} \
+  -H 'authorization: Bearer {{access_token}}' 
+```
+> **Note:** PUT,PATCH, DELETE will not be used on public API.
+
 
 
 ### Post Body

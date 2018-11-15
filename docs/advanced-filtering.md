@@ -26,15 +26,18 @@ Basically the methots that list `all` datasets can be filtered using filter attr
 
 ## Structured query object
 
-|  Attribute | Type    |Description |Possible values|
+The Structured query object is an abstraction of the Structured Query Language, SQL. Its covers almost all basic operations possible in an where.
+
+
+|  Attribute | Type    |Description |Possible values|Required|
 |---|---|---|---|
-|field|String|The name of valid attribute|Dataset attribute names|
-|value|Mixed|The expected value|Any possible value|
-|cond|String|Based on SQL conditions accept many all basic  conditionals symbols|=, <>, <, >,BETWEEN*,IN*,LIKE*, default: =|
-|type|String|Sometimes is necessary to force a cast in a value due json conversion (ex numeric values)| string,bool,int,float. Default: String|
-|op|String|When two or more conditions are used is necessary to use operator to separate objects|`OR` or `AND`|
-|right|Integer|Represent a number of right parenthesis `(` before the condition|Integer values |
-|left|Integer|Represent a number of left parenthesis `)` after the condition|Integer values |
+|field|String|The name of valid attribute|Dataset attribute names| Y |
+|value|Mixed|The expected value|Any possible value| Y |
+|cond|String|Based on SQL conditions accept many all basic  conditionals symbols|=, <>, <, >,BETWEEN*,IN*,LIKE*, default: =|N|
+|type|String|Sometimes is necessary to force a cast in a value due json conversion (ex numeric values)| string,bool,int,float. Default: String|N|
+|op|String|When two or more conditions are used is necessary to use operator to separate objects|`OR` or `AND`|N|
+|right|Integer|Represent a number of right parenthesis `(` before the condition|Integer values |N|
+|left|Integer|Represent a number of left parenthesis `)` after the condition|Integer values |N|
 
 * These are special conditions and the `value` attribute should respect these spects:
 
@@ -46,12 +49,15 @@ Basically the methots that list `all` datasets can be filtered using filter attr
 ```json
 {
   "q": [
+    {"field":"field0","value":0, "op": "and"},
     {"field":"field1","cond": "<>","value":"SOMETHING ELSE", "op": "and"},
     {"field":"field2","cond": ">","value":1, "op": "or","right":1},
     {"field":"field2","cond": "<","value":100,"left":1}
   ]
 }
 ```
-Results something like this expression:
+The product of this object is something like this expression:
 
-> field1 <> "SOMETHING ELSE" AND (field2 > 1 OR field2 < 100)
+> field0 = 0 AND field1 <> "SOMETHING ELSE" AND (field2 > 1 OR field2 < 100)
+
+The system will filter some special characters and binary data, also is not possible to INJECT SQL structures like insert, update and drops.
