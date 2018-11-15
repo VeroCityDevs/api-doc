@@ -83,13 +83,7 @@ Response:
 
 ## Get single topic information
 
-You can get the public information to geo layer using the `GET /api/v1/public/webgis/topics/{{topic_id}}`:
-
-|  field | description   |
-|---|---|
-| info  | Additional information, if exists  |
-|total_geometries|Integer value with total of geometries in a layer|
-|total_geometry_vertices|Integer with total of all geometries vertices.|
+You can get the topic's public information using the `GET /api/v1/public/webgis/topics/{{topic_id}}`:
 
 ```bash
 curl -X GET \
@@ -99,8 +93,38 @@ curl -X GET \
 
 
 ## Get all subtopics for a given topic
+Tho list all subtopics from a given topic you should use the `GET /api/v1/public/webgis/topics/subtopics/{{topic_id}}`:
+
+```bash
+curl -X GET \
+  {{base_url}}/api/v1/public/webgis/topics/subtopics/{{topic_id}} \
+  -H 'authorization: Bearer {{access_token}}' 
+```
+
+
 
 
 ## Get all Layers for a given topic
 
 
+
+You can get geo layers classified by this topic using the `GET /api/v1/public/webgis/topics/layers{{topic_id}}`:
+
+```bash
+curl -X GET \
+  {{base_url}}/api/v1/public/webgis/topics/layers/{{topic_id}} \
+  -H 'authorization: Bearer {{access_token}}' 
+```
+
+Filtering is not allowed to this endpoint.
+
+The result set is the same described on [DOCS » WEBGIS » GEO LAYERS » LIST ALL LAYERS](https://vero-city-api-docs.readthedocs.io/en/latest/api/Webgis/Layers/index.html#list-all-layers)
+```json
+{
+    "ret": {
+        "layers": [...],
+        "count": 46
+    },
+    "message": "OK"
+}
+```
