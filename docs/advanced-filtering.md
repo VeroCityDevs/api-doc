@@ -33,7 +33,7 @@ The Structured query object is an abstraction of the Structured Query Language, 
 |---|---|---|---|---|
 |field|String|The name of valid attribute|Dataset attribute names| Y |
 |value|Mixed|The expected value|Any possible value| Y |
-|cond|String|Based on SQL conditions accept many all basic  conditionals symbols|=, <>, <, >,BETWEEN*,IN*,LIKE*, default: =|N|
+|cond|String|Based on SQL conditions accept many all basic  conditionals symbols| `=`, `<>`, `<`, `>`,`BETWEEN*`,`IN*`,`LIKE*`, default: =|N|
 |type|String|Sometimes is necessary to force a cast in a value due json conversion (ex numeric values)| string,bool,int,float. Default: String|N|
 |op|String|When two or more conditions are used is necessary to use operator to separate objects|`OR` or `AND`|N|
 |right|Integer|Represent a number of right parenthesis `(` before the condition|Integer values |N|
