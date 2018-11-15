@@ -151,7 +151,7 @@ As all other responses from the API the geoJSON will be inside of `ret`:
 
 ## GEO-LOCATED QUERIES
 
-You can filter by geographical location. 
+You can filter by geographical location using `POST /api/v1/public/webgis/layers/geoQuery`
 
 The searching parameters are:
 
