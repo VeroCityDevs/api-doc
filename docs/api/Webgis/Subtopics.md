@@ -18,10 +18,13 @@ The geo layers has a header with some basic information:
 
 You can get all the public subtopics using the `GET /api/v1/public/webgis/subtopics/all`:
 
-
+```json
 curl -X GET \
   {{base_url}}/api/v1/public/webgis/subtopics/all \
   -H 'authorization: Bearer {{access_token}}'
+
+```
+
 
 which response is: 
 
@@ -29,14 +32,16 @@ which response is:
 ```json
 {
     "ret": {
-        "topics": [
-            {
-                "idtopic": 51,
-                "descr": "03 - Geography and planning"
-            },
-            {...}
+        "subtopics": [
+          {
+            "idsubtopics": 1,
+            "idtopic": 49,
+            "descr": "Public Transport"
+        
+          }, 
+          {...}
         ],
-        "count": 15
+        "count": 0
     },
     "message": "OK"
 }
@@ -61,19 +66,19 @@ Response:
 ```json
 {
     "ret": {
-        "topics": [
-            {
-                "idtopic": 49,
-                "descr": "01 - Mobility and Transport"
-            },
-            {
-                "idtopic": 50,
-                "descr": "02 - Education"
-            },
-            {
-                "idtopic": 51,
-                "descr": "03 - Geography and planning"
-            }
+        "subtopics": [
+                  {
+                    "idsubtopics": 2,
+                    "idtopic": 49,
+                    "descr": "Car sharing"
+                
+                  },
+                  {
+                    "idsubtopics": 1,
+                    "idtopic": 49,
+                    "descr": "Public Transport"
+                  },
+            {...}
         ],
         "count": 3
     },
@@ -92,12 +97,22 @@ curl -X GET \
   -H 'authorization: Bearer {{access_token}}' 
 ```
 
+```json
+{
+    "ret": {
+        "idsubtopic": 3,
+        "idtopic": 61,
+        "descr": "Streets"
+    },
+    "message": "OK"
+}
+```
 
 ## Get all Layers for a given topic
 
 
 
-You can get geo layers classified by this topic using the `GET /api/v1/public/webgis/subtopics/layers{{subtopics_id}}`:
+You can get geo layers classified by this topic using the `GET /api/v1/public/webgis/subtopics/layers/{{subtopics_id}}`:
 
 ```bash
 curl -X GET \
@@ -105,15 +120,24 @@ curl -X GET \
   -H 'authorization: Bearer {{access_token}}' 
 ```
 
-Filtering is not allowed to this endpoint.
-
 The result set is the same described on [DOCS » WEBGIS » GEO LAYERS » LIST ALL LAYERS](https://vero-city-api-docs.readthedocs.io/en/latest/api/Webgis/Layers/index.html#list-all-layers)
+
 ```json
 {
     "ret": {
-        "layers": [...],
-        "count": 46
+        "layers": [
+            {
+                "idlayer": 13,
+                "descr": "Real Time Cameras",
+                "geotype": "Point",
+                "idtopic": 49,
+                "idsubtopic": 1
+            }
+        ],
+        "count": 1
     },
     "message": "OK"
 }
 ```
+
+Filtering is not allowed to this endpoint.
