@@ -17,3 +17,4 @@ To access the entities description data a GET request must be sent to `{{base_ur
 | class_name | The name of the data model of the entity | string |
 
 The request format can be seen bellow:
+
