@@ -18,3 +18,5 @@ To access the entities description data a GET request must be sent to `{{base_ur
 
 The request format can be seen bellow:
 
+
+
