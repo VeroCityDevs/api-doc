@@ -12,3 +12,12 @@ Powerful and well structured environment based on FIWARE NGSI v2 that supports f
 - Automate processes to improve operational efficiency
 - Analyse your data and get insights to take smarter actions and improve business processes
 - Publish iot data on thematic channels of content and services
+
+
+
+## What will be possible to do with the IOT api?
+- Go deep into the `Data Model` mechanism, understanding the data modeling of all available IoT entities.
+- Consume the context-aware data from the Orion Context Broker.
+- List all Networks and their branches  and all linked entities.
+- Perform geographical queries and get the context-aware converted into geoJson
+- Access the historical data and request an export to CSV file.

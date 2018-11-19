@@ -17,10 +17,11 @@ The geo layers has a header with some basic information:
 
 You can get all the public topics using the `GET /api/v1/public/webgis/topics/all`:
 
-
+```bash
 curl -X GET \
   {{base_url}}/api/v1/public/webgis/topics/all \
   -H 'authorization: Bearer {{access_token}}'
+```
 
 which response is: 
 
