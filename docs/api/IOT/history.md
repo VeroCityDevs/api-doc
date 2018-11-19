@@ -237,7 +237,7 @@ Detailed object:
 ### Retrieving  the CSV file
 
 The generated CSV file could be large according with the number of points,
- for this reason the API will not serve it directly, instead of it the value of the `url` 
+ for this reason the API will not serve it directly, instead of it the value of the `artifact` 
  attribute should be used to get the data from the static files server.
  
  The server will stream the binary of a zip file to the HTTP Client, its not necessary authentication to access the file, so keep the url in secret.
