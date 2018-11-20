@@ -17,12 +17,3 @@ In the Vero City system a real time camera consists of a specialization of a bro
 | iframe | Tells if the camera source url is meant to be visualized trough an iframe. | boolean |
 | streaming | Tells if the camera source url is a streaming service. | boolean |
 | url | The camera url from where the image comes from. | string |
-
-## The Request Syntax
-
-```bash
-curl --request GET \
-  --url 'http://{{base_url}}/public/Cameras/Live/' \
-  --header 'Authorization: Bearer {{access_token}}'
-
-```
