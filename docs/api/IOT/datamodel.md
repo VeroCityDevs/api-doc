@@ -1,9 +1,18 @@
 # Data Model
-Used as templates for iot entities, Data Models can be accessed trough the platform API. This section will provide details surrounding the access of 
-datamodels data and datapoints. 
+
+The Data Models allow the applications know the expected data structure before querying the context, even if some attributes are not present.
+At the beginning we called it "Device Class", and old docs may contains reference as this name, but will be refactored in the future as "data model".
+It Used as templates for iot entities, Data Models can be accessed trough the platform API. This section will provide details surrounding the access of 
+data models data and datapoints. 
+
+This Data Models can be used to implement [FIWARE Data Models](https://www.fiware.org/developers/data-models/), to know more access the documentation page: [https://fiware-datamodels.readthedocs.io/en/latest](https://fiware-datamodels.readthedocs.io/en/latest)
+
+>These data models have been harmonized to enable data portability for different applications including, but not limited, to Smart Cities. They are intended to be used together with FIWARE NGSI version 2. If you want to contribute and create additional data models, please have a look at our repository of data models and the data model development guidelines.
+
+
 
 ## The Data Model Role 
-On the Vero City Platform every entity is related to a Data Model. Besides acting as a type, models describes the datapoints minimum schema that its entities  possesses, working as a interface definition much like as seen in Object Oriented Programming. This way, through the entity data model is possible to know what datapoints are available to access.
+On the Vero City Platform every entity is related to a Data Model. Besides acting as a `type`, models describes the datapoints minimum schema that its entities  possesses, working as a interface definition much like as seen in Object Oriented Programming. This way, through the entity data model is possible to know what datapoints are available to access.
 
 ## Data Model Header Endpoint
 The data model header endpoint provides access to the following data:
@@ -20,7 +29,7 @@ To access data models make a GET request to `{{base_url}}/api/v1/public/Iot/Data
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Datamodel/' \
+  --url '{{base_url}}/public/Iot/Datamodel/all' \
   --header 'Authorization: Bearer {{access_token}}'
 
 ```
@@ -38,7 +47,7 @@ This endpoint returns the datapoints of a given data model through it's name. En
 | uom_id | The id of a unity of measure. | int |
 | __required | Tells if the datapoint is mandatory to the entity that implements the data model. | boolean |
 
-To list the datapoints of a data model make a GET request to `{{base_url}}/api/v1/public/Iot/Datamodel/datapoints/{{data_model_name}}` where `data_model_name` is the name of the desired data model. The request has the following format:
+To list the datapoints of a data model make a GET request to `{{base_url}}/api/v1/public/Iot/Datamodel/datapoints/{{data_model}}` where `data_model` is the name of the desired data model. The request has the following format:
 
 ```bash
 curl --request GET \
