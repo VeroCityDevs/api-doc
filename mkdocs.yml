@@ -8,6 +8,7 @@ markdown_extensions: [toc,fenced_code]
 use_directory_urls: false
 theme: readthedocs
 extra_css: ["https://vero.city/assets/css/readthedocs/main.css", "https://vero.city/assets/css/readthedocs/core.css"]
+extra_javascript: ["custom.js"]
 pages:
   - 'Home': index.md
   - 'API Overview': 'api/overview.md'
