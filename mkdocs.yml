@@ -19,7 +19,7 @@ pages:
     - 'DataModel': 'api/IOT/datamodel.md'
     - 'Entities': 'api/IOT/entities.md'
     - 'Networks': 'api/IOT/networks.md'
-    - 'Network Branches': 'api/IOT/networkbranchs.md'
+    - 'Network Branches': 'api/IOT/networkbranches.md'
     - 'Historical Data': 'api/IOT/history.md'
   - 'Webgis':
     - 'Overview': 'api/Webgis/index.md'
