@@ -56,7 +56,7 @@ In particular this example will return only cameras with streaming support:
 
 ```bash
 curl -X POST \
-  http://tdp.local/api/v1/public/Cameras/Live/all \
+  {{base_url}}/api/v1/public/Cameras/Live/all \
   -H 'Authorization: Bearer {{access_token}}'
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
