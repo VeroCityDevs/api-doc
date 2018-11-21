@@ -2,7 +2,7 @@
 On the vero city platform entities and their context state can be accessed with the RESTful API. This section will present what can be accessed trough the Entities endpoint.
 
 ## Characteristics of a Entity
-An entity represents an actual element of a certain type (Data Model). To represent a real "thing" entities have two types of data: Description that identifies and details the entity and a "state", stored on the orion context, that is composed of the current data of the entitiy datapoints. The data that makes up the entity state is defined primarily by its Data Model, wich every entity must possess, but also can vary in both ways, having extra or fewer datapoints from what is defined by the data model schema.
+An entity represents an actual element of a certain type (Data Model). To represent a real "thing" entities have two types of data: Description that identifies and details the entity and a "state", stored on the orion context, that is composed of the current data reading of the entitiy datapoints. The data that makes up the entity state is defined primarily by its Data Model, wich every entity must possess, but also can vary in both ways, having extra or fewer datapoints from what is defined by the data model schema.
 
 ## Accessing Entities Description Data (Headers)
 To access the entities description data a GET request must be sent to `{{base_url}}/api/v1/public/Iot/Entities/`, for a list of entities, and to `{{base_url}}/api/v1/public/Iot/Entities/{{entity_id}}` to get data from a specific entity. The description data is composed of:
@@ -18,5 +18,17 @@ To access the entities description data a GET request must be sent to `{{base_ur
 
 The request format can be seen bellow:
 
+```bash
+curl --request GET \
+  --url 'http://{{base_url}}/public/Iot/Entities/{{entitiy_id}}' \
+  --header 'Authorization: Bearer {{access_token}}'
+```
 
+## Accessing the Context of a Entity
+Every entity has the state of it's datapoints stored on the orion context. This endpoint allows to get the state data of a entity. The request, wich must be a GET, can be seen beelow:
 
+```bash
+curl --request GET \
+  --url 'http://{{base_url}}/public/Iot/Entities/context/{{entity_id}}' \
+  --header 'Authorization: Bearer {{access_token}}'
+```

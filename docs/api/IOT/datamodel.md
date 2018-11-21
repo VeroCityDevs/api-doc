@@ -37,7 +37,7 @@ curl --request GET \
 To get data of a specific data model use the data model name at the end of the url as follows: `{{base_url}}/api/v1/public/Iot/Datamodel/{{data_model_name}}`.
 
 ## Data Model Datapoints Endpoint
-This endpoint returns the datapoints of a given data model through it's name. Entities datapoints are attributes that holds some data on the context. For each datapoint of the data model this endpoint provides the following information:
+This endpoint returns the datapoints of a given data model through it's name. When a entity is created it can inherit the datapoint schema of it's Data Model. The datapoints of a entity are attributes that holds data on the context. For each datapoint of the data model this endpoint provides the following information:
 
 |  Parameter | Description | Type |
 |---|---|---|
