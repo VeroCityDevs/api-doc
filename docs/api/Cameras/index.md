@@ -17,3 +17,14 @@ In the Vero City system a real time camera consists of a specialization of a bro
 | iframe | Tells if the camera source url is meant to be visualized trough an iframe. | boolean |
 | streaming | Tells if the camera source url is a streaming service. | boolean |
 | url | The camera url from where the image comes from. | string |
+
+## The Request Syntax
+Use the following call to get a list of public real time cameras of the platform. To get access of a single camera simply add its ID to the end of the request url as follows: `http://{{base_url}}/public/Cameras/Live/{{camera_id}}`.
+
+```bash
+curl --request GET \
+  --url 'http://{{base_url}}/public/Cameras/Live/' \
+  --header 'Authorization: Bearer {{access_token}}'
+
+```
+
