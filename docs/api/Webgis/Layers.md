@@ -94,7 +94,7 @@ curl -X GET \
 ### Geometry filtering: 
 
 Is possible to filter wich geometries will be loaded inside the `FeatureCollection` sending an array with geometries ID:
-
+```bash
 curl -X POST \
   {{base_url}}/api/v1/public/webgis/layers/geoJson/{{layer_id}} \
     -H 'authorization: Bearer {{access_token}}' \
