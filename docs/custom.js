@@ -22,3 +22,10 @@ domReady(function(d){
         d.documentElement.className += " in-iframe";
     }
 });
+
+var messenger = {
+    messageCache: [],
+    queue: function() {
+        this.messageCache.push(arguments);
+    }
+};
