@@ -79,7 +79,7 @@ If you have any questions, please post them in the https://github.com/VeroCityDe
 1. Requests resulting in an error response may not exceed 5% of your total requests.
 1. Integrations should use Vero City Platform's OAuth protocol.
 1. Integrators must store time-to-live (TTL) data for OAuth access tokens which will be returned to you in an `expires_in` parameter whenever you generate an access token. Unauthorized (401) requests are not a valid indicator that a new access token must be retrieved.
-1. We reserve the rights to change or deprecate the APIs over time - we will website note and provide social media notification in those cases.
+1. We reserve the rights to change or deprecate the APIs over time - we will provide developers with ample notification in those cases.
 
 
 ### API Limits
