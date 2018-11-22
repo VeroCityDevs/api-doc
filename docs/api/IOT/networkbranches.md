@@ -1,11 +1,11 @@
-# Network Branchs
-On the Vero City Platform every network is composed of one master branch and *n* other branches. When a entity is added to a network, actually it is linked to one of it branches. The API provide a few endpoints regarding network branches, wich are described on this section of the documentation.
+# Network Branches
+On Vero City Platform, every network is composed of one master branch and *n* other branches. When an entity is added to a network, actually it is linked to one of its branches. The API provides few endpoints regarding network branches, which are described on this section of the documentation.
 
 ## Understanding the Master Branch
-The **master branch** is the main branch of every network and is used to represent the network as a whole. This means that every other branch of a network is "under" the master one. When a entity is linked to any branch of a network it is also connected to the master branch. This is also true when a entity is linked only to the network, with no branch specified. In those cases, the entity is simply being linked to the master branch of the network.
+The **master branch** is the main branch of every network and is used to represent the network as a whole. This means that every other branch of a network is "under" the master one. When an entity is linked to any branch of a network it is also connected to the master branch. This is also true when an entity is linked only to the network, with no branch specified. In those cases, the entity is simply being linked to the master branch of the network.
 
 ## Getting a List of a Network Branches
-To access all branches of a network a GET request must be sent to `{{base_url}}/public/Iot/Networkbranches/all/{{network_id}}`, informing the network id. The result format and the request syntax can be seen ahead:
+To access all branches of a network a GET request must be sent to `{{base_url}}/public/Iot/Networkbranches/all/{{network_id}}`, informing the network id. The result format and the request syntax can be seen below:
 
 ```json
 [
@@ -53,9 +53,9 @@ curl --request GET \
 ```
 
 ## Network Branches as GeoJSON
-The API allows to get a geoJSON generated from the position of the entities of a network branches. This endpoint receives an array of branches id and returns the geospatial data. If is necessary to generate a geoJSON of all entities in a network, simply use the master branch id.
+The API allows to get a geoJSON generated from the position of the entities of network branches. This endpoint receives an array of branches id and returns the geospatial data. If is necessary to generate a geoJSON of all entities in a network, simply use the master branch id.
 
-Besides the geospatial data of the entities, this endpoint also give access to the context data for each entity. To use this endpoint, send a POST request to `{{base_url}}/public/Iot/Networks/geoJson`, informing the following data on the request body:
+Besides the geospatial data of the entities, this endpoint also gives access to the context data for each entity. To use this endpoint, send a POST request to `{{base_url}}/public/Iot/Networks/geoJson`, informing the following data on the request body:
 
 ```json
 {
@@ -75,7 +75,7 @@ curl --request POST \
 }'
 ````
 
-The return of this endpoint is a geoJSON wich each feature has the geometry informations and the entity properties with the respective context value. An example can be seen bellow:
+The return of this endpoint is a geoJSON which each feature has the geometry information and the entity properties with the respective context value. An example can be seen bellow:
 
 ```json
 {
