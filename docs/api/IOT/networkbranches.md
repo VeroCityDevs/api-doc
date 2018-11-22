@@ -46,7 +46,7 @@ This endpoint allows to list devices that are linked to the given network branch
 ]
 ```
 
-``````bash
+```bash
 curl --request GET \
   --url '{{base_url}}/public/Iot/Networkbranches/devices/{{branch_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
