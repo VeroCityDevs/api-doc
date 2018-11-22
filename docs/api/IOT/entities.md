@@ -20,7 +20,7 @@ The request format can be seen bellow:
 
 ```bash
 curl --request GET \
-  --url 'http://{{base_url}}/public/Iot/Entities/{{entitiy_id}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Entities/{{entitiy_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
 ```
 
@@ -29,7 +29,7 @@ Every entity has the state of it's datapoints stored on the orion context. This 
 
 ```bash
 curl --request GET \
-  --url 'http://{{base_url}}/public/Iot/Entities/context/{{entity_id}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Entities/context/{{entity_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
 ```
 

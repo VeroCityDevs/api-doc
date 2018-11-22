@@ -18,8 +18,7 @@ In the Vero City system a real time camera consists of a specialization of a bro
 | url | The camera url from where the image comes from. | string |
 
 ## The Request Syntax
-Use the following call to get a list of public real time cameras of the platform. 
-To get access of a single camera simply add its ID to the end of the request url as follows: `http://{{base_url}}/public/Cameras/Live/{{camera_id}}`.
+Use the following call to get a list of public real time cameras of the platform: 
 
 ```bash
 curl --request GET \
@@ -57,7 +56,7 @@ In particular this example will return only cameras with streaming support:
 
 ```bash
 curl -X POST \
-  http://tdp.local/api/v1/public/Cameras/Live/all \
+  {{base_url}}/api/v1/public/Cameras/Live/all \
   -H 'Authorization: Bearer {{access_token}}'
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \

@@ -8,8 +8,8 @@ Basically the methots that list `all` datasets can be filtered using filter attr
 |  Attribute | Type    |Description |
 |---|---|---|
 | q  | Array  | Array of Structured query objects|
-| limit  | Integer   | Limit the number of records returned based on a limit value  |
-| order  | String  |field name to be used as ordering attribute. e.g. `totalitem`. By standard the ascending sort will be used, you can use the `DESC` to descending  (Z to A, 9 to 0) sorting , for dates and times, ascending means that earlier values precede later ones e.g. 1/1/2000 will sort ahead of 1/1/2001.  |
+| limit  | Integer   | Limit the number of returned records based on a limit value  |
+| order  | String  | Field name to be used as ordering attribute, e.g. `totalitem`. By standard the ascending sort will be used. You can use the `DESC` to descending  (Z to A, 9 to 0) sorting, for dates and times, ascending means that earlier values precede later ones, e.g. 1/1/2000 will sort ahead of 1/1/2001.  |
 
 #### Sample of filter attributes:
 
@@ -31,18 +31,18 @@ The Structured query object is an abstraction of the Structured Query Language, 
 
 |  Attribute | Type    |Description |Possible values|Required|
 |---|---|---|---|---|
-|field|String|The name of valid attribute|Dataset attribute names| Y |
-|value|Mixed|The expected value|Any possible value| Y |
-|cond|String|Based on SQL conditions accept many all basic  conditionals symbols| `=`, `<>`, `<`, `>`,`BETWEEN*`,`IN*`,`LIKE*`, default: =|N|
-|type|String|Sometimes is necessary to force a cast in a value due json conversion (ex numeric values)| string,bool,int,float. Default: String|N|
-|op|String|When two or more conditions are used is necessary to use operator to separate objects|`OR` or `AND`|N|
-|right|Integer|Represent a number of right parenthesis `(` before the condition|Integer values |N|
-|left|Integer|Represent a number of left parenthesis `)` after the condition|Integer values |N|
+|field|String| The name of valid attribute|Dataset attribute names| Y |
+|value|Mixed| The expected value|Any possible value| Y |
+|cond|String| Based on SQL conditions accept many all basic conditional symbols| `=`, `<>`, `<`, `>`,`BETWEEN*`,`IN*`,`LIKE*`, default: =|N|
+|type|String| Sometimes, it is necessary to force a cast in a value due json conversion (e.g: numeric values)| string, bool, int, float. Default: String|N|
+|op|String| When two or more conditions are used it is necessary to use operator to separate objects|`OR` or `AND`|N|
+|right|Integer| Represent a number of right parenthesis `(` before the condition|Integer values |N|
+|left|Integer| Represent a number of left parenthesis `)` after the condition|Integer values |N|
 
-* These are special conditions and the `value` attribute should respect these spects:
+* These are special conditions and the `value` attribute should respect these specifications:
 
 - BETWEEN : The `value` attribute should be an `Array` with two positions.
-- IN  and NOT IN : The `value` attribute should be an `Array` with 1 or N values.
+- IN and NOT IN : The `value` attribute should be an `Array` with 1 or N values.
 - LIKE : The LIKE condition is used to search for a specified pattern in a value. By default `%` will be add around of value.
 
 #### Sample
@@ -56,8 +56,8 @@ The Structured query object is an abstraction of the Structured Query Language, 
   ]
 }
 ```
-The product of this object is something like this expression:
+The product of this object is something like the following expression:
 
 > field0 = 0 AND field1 <> "SOMETHING ELSE" AND (field2 > 1 OR field2 < 100)
 
-The system will filter some special characters and binary data, also is not possible to INJECT SQL structures like insert, update and drops.
+The system will filter some special characters and binary data. Also, it is not possible to INJECT SQL structures like insert, update and drops.
