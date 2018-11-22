@@ -37,7 +37,6 @@ This endpoint lists all entities of a network regardless of with wich branches t
 curl --request GET \
   --url '{{base_url}}/public/Iot/Networks/devices/{{network_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
-```
 
 ## Listing the Branches of a Network
 To access the brances list of a network simply use a GET request to the following url, informing the network id, `{{base_url}}/public/Iot/Networks/branches/{{network_id}}`. The return is a array of objects with the following data:
@@ -48,3 +47,9 @@ To access the brances list of a network simply use a GET request to the followin
 | descr | A user friendly name of the branch | string |
 | idnetwork | The id of the network that the branch belongs to. | string |
 | public | A flag to indicate if the branch is public or not | boolean |
+
+``````bash
+curl --request GET \
+  --url '{{base_url}}/public/Iot/Networks/branches/{{network_id}}' \
+  --header 'Authorization: Bearer {{access_token}}'
+```
