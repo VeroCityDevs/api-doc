@@ -18,8 +18,7 @@ function domReady(fn) {
 
 domReady(function(d){
     if (window.self !== window.top) {
-        /* this document is loaded in a frame/iframe */
-        d.documentElement.className += " in-iframe";
+        d.body.classList.add("in-iframe");
     }
 });
 
