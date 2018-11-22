@@ -18,7 +18,7 @@ To access all branches of a network a GET request must be sent to `{{base_url}}/
 ]
 ```
 
-``````bash
+```bash
 curl --request GET \
   --url '{{base_url}}/public/Iot/Networkbranches/all/{{network_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
