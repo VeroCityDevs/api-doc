@@ -8,7 +8,7 @@ Powerful and well structured environment based on FIWARE NGSI v2 that supports f
 - Design and implement rules of action management from jobs, triggers, functions and subscriptions
 - Create custom iot dashboards to monitor your networks of things in real-time
 - Create layers of iot networks and apply them to maps
-- Use our libraries and apis to make it easier and faster the deployment of specialized applications
+- Use our libraries and apis to make easier and faster the deployment of specialized applications
 - Automate processes to improve operational efficiency
 - Analyse your data and get insights to take smarter actions and improve business processes
 - Publish iot data on thematic channels of content and services
@@ -19,6 +19,6 @@ Powerful and well structured environment based on FIWARE NGSI v2 that supports f
 
 - Go deep into the `Data Model` mechanism, understanding the data modeling of all available IoT entities.
 - Consume the context-aware data from the Orion Context Broker.
-- List all Networks and their branches  and all linked entities.
+- List all Networks and their branches and all linked entities.
 - Perform geographical queries and get the context-aware converted into geoJson
 - Access the historical data and request an export to CSV file.

@@ -1,25 +1,25 @@
 # GEO Layers
 
-The Vero City Platform has a geospatial database, the Platform Admin can upload many sources of geospatial data such WMS, geoTIFF, ShapeFile, KML,and others. 
-he aplication API provides a RESTful endpoint to access each geo layer agording of [GeoJSON Specification (RFC 7946)](https://tools.ietf.org/html/rfc7946)
+Vero City Platform has a geospatial database and the Platform Admin can upload many sources of geospatial data such WMS, geoTIFF, ShapeFile, KML,and others. 
+The aplication API provides a RESTful endpoint to access each geo layer according to [GeoJSON Specification (RFC 7946)](https://tools.ietf.org/html/rfc7946)
 >  GeoJSON is a geospatial data interchange format based on JavaScript
 >     Object Notation (JSON).
  
 ## Geo Layer header structure
 
-The geo layers has a header with some basic information: 
+Geo layers have a header with some basic information: 
 
 |  field | description   |
 |---|---|
 | idlayer  | Layer ID   |
 |  descr | Short description  |
 | idtopic  | Topic ID, if exists  |
-| idsubtopic  |  Topic ID, if exist |
+| idsubtopic  |  Topic ID, if exists |
 | source  | Data provider  |
 
 ## List All Layers
   
-You can get all the public geo layer using the `GET /api/v1/public/webgis/layers/all`:
+You can get all the public geo layer using `GET /api/v1/public/webgis/layers/all`:
 
 ```bash
 curl -X GET \
@@ -52,7 +52,7 @@ which response is:
 
 
 Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://vero-city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need. 
-In particular this example will return only geo layers with type "Point", with limit of 200.
+In particular, this example will return only geo layers with type "Point", with limit of 200.
 
 
 ```bash
@@ -71,8 +71,8 @@ You can get the public information to geo layer using the `GET /api/v1/public/we
 |  field | description   |
 |---|---|
 | info  | Additional information, if exists  |
-|total_geometries|Integer value with total of geometries in a layer|
-|total_geometry_vertices|Integer with total of all geometries vertices.|
+|total_geometries| Integer value with total of geometries in a layer|
+|total_geometry_vertices| Integer with total of all geometries vertices.|
 
 ```bash
 curl -X GET \
@@ -93,7 +93,7 @@ curl -X GET \
 
 ### Geometry filtering: 
 
-Is possible to filter wich geometries will be loaded inside the `FeatureCollection` sending an array with geometries ID:
+It is possible to filter which geometries will be loaded in the `FeatureCollection` sending an array with geometries ID:
 ```bash
 curl -X POST \
   {{base_url}}/api/v1/public/webgis/layers/geoJson/{{layer_id}} \
@@ -107,7 +107,7 @@ curl -X POST \
 
 
 
-As all other responses from the API the geoJSON will be inside of `ret`:
+As all other responses from the API, the geoJSON will be in of `ret`:
 
 
 ```json
@@ -157,7 +157,7 @@ The searching parameters are:
 
 |  field |type| description   |
 |---|---|---|
-|layers|Array|A list of layers. You must include at least one layer id in order to filtering.|
+|layers|Array| A list of layers. You must include at least one layer id in order to filter|
 |geometry|geoJSON geometry object| Supported geometry types: Polygon and Point|
 |radius|Integer| Representation in meters (i.e.: 1000 = 1km). Max value allowed 5000|
 
@@ -176,7 +176,7 @@ curl -X POST \
 }'
 ```
 
-### Filter layers geometris given  point and radius:
+### Filter layers geometries given by point and radius:
 ```json
 {
 	"layers":["86", "90", "91", "94", "98", "107", "155"],
@@ -189,7 +189,7 @@ curl -X POST \
 
 ### Result set:
 
-The query result includes only the geometries grouped by  Layer ID located in that area, i.e.:
+The query result includes only the geometries grouped by Layer ID located in that area, i.e.:
 
 
 

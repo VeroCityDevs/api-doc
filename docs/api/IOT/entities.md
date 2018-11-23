@@ -1,17 +1,17 @@
 # Entities
-On the vero city platform entities and their context state can be accessed with the RESTful API. This section will present what can be accessed trough the Entities endpoint.
+On Vero City Platform, entities and their context state can be accessed with the RESTful API. This section will present what can be accessed through the Entities endpoint.
 
-## Characteristics of a Entity
-An entity represents an actual element of a certain type (Data Model). To represent a real "thing" entities have two types of data: Description that identifies and details the entity and a "state", stored on the orion context, that is composed of the current data reading of the entitiy datapoints. The data that makes up the entity state is defined primarily by its Data Model, wich every entity must possess, but also can vary in both ways, having extra or fewer datapoints from what is defined by the data model schema.
+## Characteristics of an Entity
+An entity represents an actual element of a certain type (Data Model). To represent a real "thing", entities have two types of data: Description, that identifies and details the entity, and a "state", stored on the orion context, that is composed of the current data reading of the entitiy datapoints. The data that makes up the entity state is defined primarily by its Data Model, which every entity must possess, but can also vary in both ways, having extra or fewer datapoints from what is defined by the data model schema.
 
 ## Accessing Entities Description Data (Headers)
-To access the entities description data a GET request must be sent to `{{base_url}}/api/v1/public/Iot/Entities/`, for a list of entities, and to `{{base_url}}/api/v1/public/Iot/Entities/{{entity_id}}` to get data from a specific entity. The description data is composed of:
+To access the entities description data, a GET request must be sent to `{{base_url}}/api/v1/public/Iot/Entities/`, for a list of entities, and to `{{base_url}}/api/v1/public/Iot/Entities/{{entity_id}}` to get data from a specific entity. The description data is composed of:
 
 |  Parameter | Description | Type |
 |---|---|---|
-| id | Unique identifier of the entity. It must bem unique in all of the context independently of the entity data model. | string |
-| descr | A optional user-friendly name for the entity. | string |
-| label | A prefrerrably small name or identifier of the entity that is normally used on the Vero City Platform UIs. | string |
+| id | Unique identifier of the entity. It must be unique in all of the context independently of the entity data model. | string |
+| descr | An optional user-friendly name for the entity. | string |
+| label | A preferrably small name or identifier of the entity that is normally used on Vero City Platform UIs. | string |
 | obs | Any extra information about the entity | string |
 | __public | A flag that indicates if this entity is public or not | boolean |
 | class_name | The name of the data model of the entity | string |
@@ -24,8 +24,8 @@ curl --request GET \
   --header 'Authorization: Bearer {{access_token}}'
 ```
 
-## Accessing the Context of a Entity
-Every entity has the state of it's datapoints stored on the orion context. This endpoint allows to get the state data of a entity. The request, wich must be a GET, can be seen beelow:
+## Accessing the Context of an Entity
+Every entity has the state of its datapoints stored on the orion context. This endpoint allows to get the state data of an entity. The request, which must be a GET, can be seen beelow:
 
 ```bash
 curl --request GET \
@@ -115,24 +115,24 @@ The response is an object representing the entity identified by the ID. The obje
 }
 ```
 
-The `id` and `type` are mandatory attributes from NGSIv2,  where id are an unique identification and the type represents the Data Model. 
-Some attributes are created by the system as mandatory, all this attributes are represented with  prefix  underscore `__`.
-At the example above is possible to see some of then:
+The `id` and `type` are mandatory attributes from NGSIv2,  where id is an unique identification and the type represents the Data Model. 
+Some attributes are created by the system as mandatory, all these attributes are represented with prefix underscore `__`.
+At the example above, it is possible to see some of them:
 
-- `_label` , its a description for the entity.
-- `_location` , the geographical location, as NGSIv2 only allow one attribute as geographical we decided to normalize it as an fixed attribute.
-- `_network`, the array with branch IDs , represents which network branch this entity are in.
+- `_label` , it is a description for the entity.
+- `_location` , the geographical location as NGSIv2 only allows one attribute as geographical. We decided to normalize it as a fixed attribute.
+- `_network`, the array with branch IDs represents which network branch this entity is in.
 
 
 This endpoint also support NGSIv2 Parameters:
 
 |  Parameter | Description | Type |
 |---|---|---|
-| attrs | Comma-separated list of attribute names whose data must be included in the response. The attributes are retrieved in the order specified by this parameter. See "Filtering out attributes and metadata" section for more detail. If this parameter is not included, the attributes are retrieved in arbitrary order, and all the attributes of the entity are included in the response. Example: temperature,humidity.|String|
-| metadata | A list of metadata names to include in the response.  Example: accuracy. See "Filtering out attributes and metadata" section in [FIWARE-NGSI v2 Specification](https://orioncontextbroker.docs.apiary.io/#reference/entities)  for more detail.|String|
-| options | Options dictionary Possible values:  keyValues , values | String|
+| attrs | Comma-separated list of attribute names whose data must be included in the response. The attributes are retrieved in the order specified by this parameter. See "Filtering out attributes and metadata" section for more details. If this parameter is not included, the attributes are retrieved in arbitrary order and all the attributes of the entity are included in the response. Example: temperature, humidity.|String|
+| metadata | A list of metadata names to include in the response. Example: accuracy. See "Filtering out attributes and metadata" section in [FIWARE-NGSI v2 Specification](https://orioncontextbroker.docs.apiary.io/#reference/entities)  for more details.|String|
+| options | Option dictionary Possible values:  keyValues , values | String|
 
-This parameters can be sent by post body or Query String when GET request. 
+These parameters can be sent by post body or Query String when GET request. 
 
 By default, the call without any parameters will use `options=dateModified,dateCreated` but the value can be modified when using any of NGSIv2 parameters:
 For example, return only the datapoint `BoilerHeatMeter` in key-value format you can use `GET /api/v1/public/iot/entities/context/Enkplatz4?options=keyValues&attrs=BoilerHeatMeter`,

@@ -1,11 +1,11 @@
 # Access Token
 
-Vero City Platform API implements a RESTFul API based into Oauth 2.0 Standard. In thinks guide we will use the Client Credential Flow.
+Vero City Platform API implements a RESTFul API based into Oauth 2.0 Standard. In thinks guide, we will use the Client Credential Flow.
 
 ## Implementing the Client Credentials Flow
 
-The Client Credentials flow is recommended for use in machine-to-machine authentication.
-Your application will need to securely store it’s Client ID and Secret and pass those to API in exchange for an access token. 
+The Client Credentials flow is recommended for using in machine-to-machine authentication.
+Your application will need to securely store its Client ID and Secret and pass those to API in exchange for an access token. 
 At a high-level, the flow only has two steps:
 
 - Your application passes its client credentials to your API authorization server.
@@ -15,7 +15,7 @@ At a high-level, the flow only has two steps:
 ## Using the Client Credentials Flow
 Your Client Application will need to have its client ID and secret stored in a secure manner. 
 
-To ask API for tokens , perform a POST operation to the endpoint `{{base_url}}/api/v1/access_token` with a payload in the following format:
+To request API for tokens, perform a POST operation to the endpoint `{{base_url}}/api/v1/access_token` with a payload in the following format:
 
 ```bash
 curl -X POST \
@@ -29,12 +29,12 @@ curl -X POST \
 Note the parameters that are being passed:
 
 - `grant_type` the value aways is `client_credentials`, indicating that we are using the Client Credentials grant type.
-- `client_id` Your application's Client ID. 
-- `client_secret` Your application's Client Secret.
+- `client_id` Your application Client ID. 
+- `client_secret` Your application Client Secret.
 
 
 
-If the credentials are valid, the application will receive back an access token:
+If the credentials are valid the application will receive back an access token:
 
 ```json
 {

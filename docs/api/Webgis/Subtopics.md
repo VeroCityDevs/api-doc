@@ -1,10 +1,10 @@
 # Topics
 
-Geo layers can be classified by Topic and Subtopic, the API allow listing topics, subtopics and geo layers by these characteristics. 
+Geo layers can be classified by Topic and Subtopic. The API allows listing topics, subtopics and geo layers by these characteristics. 
 
 ## Object structure
 
-The geo layers has a header with some basic information: 
+The geo layers have a header with some basic information: 
 
 |  field | description   |
 |---|---|
@@ -51,7 +51,7 @@ which response is:
 
 Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://vero-city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need.
 
-In particular this example will return topic ordering by description with limit of 3 topics.
+In particular, this example will return topic ordering by description with limit of 3 topics.
 
 
 ```bash
@@ -87,9 +87,9 @@ Response:
 ```
 
 
-## Get single subtopics information
+## Get single subtopic information
 
-You can get the topic's public information using the `GET /api/v1/public/webgis/subtopics/{{subtopics_id}}`:
+You can get the topic public information using the `GET /api/v1/public/webgis/subtopics/{{subtopics_id}}`:
 
 ```bash
 curl -X GET \
