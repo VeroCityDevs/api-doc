@@ -9,6 +9,7 @@ use_directory_urls: false
 theme: readthedocs
 extra_css: ["https://vero.city/assets/css/readthedocs/main.css", "https://vero.city/assets/css/readthedocs/core.css"]
 extra_javascript: ["custom.js"]
+google_analytics: ['UA-130184819-1', 'fiware-orion.readthedocs.io']
 pages:
   - 'Home': index.md
   - 'API Overview': 'api/overview.md'
