@@ -82,7 +82,7 @@ To retrive historical points from the `Static Data Lake` you can use `POST {{bas
 |data_model|String| This parameter should be sent on the url immediately after all/ on URI|
 |entity_id|String| This parameter represents the entity id|
 |datapoint|String| The datapoint name|
-|limit|Integer| Representation in meters (i.e.: 1000 = 1km). Max value allowed 5000|
+|limit|Integer| Limit number of rows|
 
 
 ```bash
@@ -106,7 +106,7 @@ curl -X GET \
 If you chose to use GET you must convert the parameters to Query-String format.
 
 
-The examples above, GET or POST, are queering the last 3 data points from the `BoilerHeatMeter` of device `Enkplatz4`, with data model `BuildingEnergyObserved`, which result is: 
+The examples above, GET or POST, are queering the last 3 historical records from the `BoilerHeatMeter` of device `Enkplatz4`, with data model `BuildingEnergyObserved`, which result is: 
 
 
 ```json
