@@ -5,7 +5,7 @@ On Vero City Platform, every network is composed of one master branch and *n* ot
 The **master branch** is the main branch of every network and is used to represent the network as a whole. This means that every other branch of a network is "under" the master one. When an entity is linked to any branch of a network it is also connected to the master branch. This is also true when an entity is linked only to the network, with no branch specified. In those cases, the entity is simply being linked to the master branch of the network.
 
 ## Getting a List of a Network Branches
-To access all branches of a network a GET request must be sent to `{{base_url}}/public/Iot/Networkbranches/all/{{network_id}}`, informing the network id. The result format and the request syntax can be seen below:
+To access all branches of a network a GET request must be sent to `{{base_url}}/api/v1/public/Iot/Networkbranches/all/{{network_id}}`, informing the network id. The result format and the request syntax can be seen below:
 
 ```json
 [
@@ -20,12 +20,12 @@ To access all branches of a network a GET request must be sent to `{{base_url}}/
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Networkbranches/all/{{network_id}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Networkbranches/all/{{network_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
 ```
 
 ## Getting Entities Linked to a Branch
-This endpoint allows to list devices that are linked to the given network branch. To do this, send a GET request to `{{base_url}}/public/Iot/Networkbranches/devices/{{branch_id}}`. The result and the request syntax are shown bellow:
+This endpoint allows to list devices that are linked to the given network branch. To do this, send a GET request to `{{base_url}}/api/v1/public/Iot/Networkbranches/devices/{{branch_id}}`. The result and the request syntax are shown bellow:
 
 ```json
 [
@@ -48,14 +48,14 @@ This endpoint allows to list devices that are linked to the given network branch
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Networkbranches/devices/{{branch_id}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Networkbranches/devices/{{branch_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
 ```
 
 ## Network Branches as GeoJSON
 The API allows to get a geoJSON generated from the position of the entities of network branches. This endpoint receives an array of branches id and returns the geospatial data. If is necessary to generate a geoJSON of all entities in a network, simply use the master branch id.
 
-Besides the geospatial data of the entities, this endpoint also gives access to the context data for each entity. To use this endpoint, send a POST request to `{{base_url}}/public/Iot/Networks/geoJson`, informing the following data on the request body:
+Besides the geospatial data of the entities, this endpoint also gives access to the context data for each entity. To use this endpoint, send a POST request to `{{base_url}}/api/v1/public/Iot/Networks/geoJson`, informing the following data on the request body:
 
 ```json
 {
@@ -67,7 +67,7 @@ The request syntax can be seen bellow:
 
 ```bash
 curl --request POST \
-  --url '{{base_url}}/public/Iot/Networks/geoJson' \
+  --url '{{base_url}}/api/v1/public/Iot/Networks/geoJson' \
   --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{

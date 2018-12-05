@@ -22,7 +22,7 @@ Use the following call to get a list of public real time cameras of the platform
 
 ```bash
 curl --request GET \
-  --url 'http://{{base_url}}/api/v1/public/Cameras/Live/all' \
+  --url '{{base_url}}/api/v1/public/Cameras/Live/all' \
   --header 'Authorization: Bearer {{access_token}}'
 
 ```

@@ -29,7 +29,7 @@ To access data models, make a GET request to `{{base_url}}/api/v1/public/Iot/Dat
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Datamodel/all' \
+  --url '{{base_url}}/api/v1/public/Iot/Datamodel/all' \
   --header 'Authorization: Bearer {{access_token}}'
 
 ```
@@ -51,7 +51,7 @@ To list the datapoints of a data model, make a GET request to `{{base_url}}/api/
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Datamodel/datapoints/{{data_model_name}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Datamodel/datapoints/{{data_model_name}}' \
   --header 'Authorization: Bearer {{access_token}}'
 
 ```

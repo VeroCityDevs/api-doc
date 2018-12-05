@@ -14,11 +14,11 @@ The following table presents a description of the data returned by the network e
 | descr | A user friendly name or description of the network | string |
 | public | A flag to indicate if the network is public or not | boolean |
 
-To get a list of networks, a GET request must be sent to `{{base_url}}/public/Iot/Networks/`. If you wish to get data from a single network, add the id at the end of the url as follows: `{{base_url}}/public/Iot/Networks/{{network_id}}`.
+To get a list of networks, a GET request must be sent to `{{base_url}}/api/v1/public/Iot/Networks/`. If you wish to get data from a single network, add the id at the end of the url as follows: `{{base_url}}/api/v1/public/Iot/Networks/{{network_id}}`.
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Networks/' \
+  --url '{{base_url}}/api/v1/public/Iot/Networks/' \
   --header 'Authorization: Bearer {{access_token}}'
 ```
 
@@ -35,11 +35,11 @@ This endpoint lists all entities of a network regardless of which branches they 
 
 ```bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Networks/devices/{{network_id}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Networks/devices/{{network_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
 
 ## Listing the Branches of a Network
-To access the brances list of a network, simply use a GET request to the following url, informing the network id, `{{base_url}}/public/Iot/Networks/branches/{{network_id}}`. The return is an array of objects with the following data:
+To access the brances list of a network, simply use a GET request to the following url, informing the network id, `{{base_url}}/api/v1/public/Iot/Networks/branches/{{network_id}}`. The return is an array of objects with the following data:
 
 |  field | description   | Type |
 |---|---|---|
@@ -50,6 +50,6 @@ To access the brances list of a network, simply use a GET request to the followi
 
 ``````bash
 curl --request GET \
-  --url '{{base_url}}/public/Iot/Networks/branches/{{network_id}}' \
+  --url '{{base_url}}/api/v1/public/Iot/Networks/branches/{{network_id}}' \
   --header 'Authorization: Bearer {{access_token}}'
 ```
