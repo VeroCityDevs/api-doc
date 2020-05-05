@@ -1,4 +1,4 @@
-site_name:  Vero City API Docs
+site_name:  We4city API Docs
 site_url: https://we4city-api-docs.readthedocs.io/
 repo_url: https://github.com/we4city/api-doc.git
 site_description: We4city API Documentation
@@ -7,7 +7,7 @@ site_dir: html
 markdown_extensions: [toc,fenced_code]
 use_directory_urls: false
 theme: readthedocs
-extra_css: ["main.css", "core.css"]
+extra_css: ["https://we4city.com/assets/css/readthedocs/main.css", "https://we4city.com/assets/css/readthedocs/core.css"]
 extra_javascript: ["custom.js"]
 google_analytics: ['UA-130184819-1', 'we4city.readthedocs.io']
 pages:
