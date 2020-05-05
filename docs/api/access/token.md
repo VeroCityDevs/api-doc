@@ -1,6 +1,6 @@
 # Access Token
 
-Vero City Platform API implements a RESTFul API based into Oauth 2.0 Standard. In thinks guide, we will use the Client Credential Flow.
+We4city Platform API implements a RESTFul API based into Oauth 2.0 Standard. In thinks guide, we will use the Client Credential Flow.
 
 ## Implementing the Client Credentials Flow
 

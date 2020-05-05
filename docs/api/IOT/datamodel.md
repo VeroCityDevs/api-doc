@@ -12,7 +12,7 @@ These Data Models can be used to implement [FIWARE Data Models](https://www.fiwa
 
 
 ## The Data Model Role 
-On the Vero City Platform every entity is related to a Data Model. Besides acting as a `type`, models describes the datapoints minimum schema that its entities  possesses, working as a interface definition much like as seen in Object Oriented Programming. This way, through the entity data model is possible to know what datapoints are available to access.
+On the We4city Platform every entity is related to a Data Model. Besides acting as a `type`, models describes the datapoints minimum schema that its entities  possesses, working as a interface definition much like as seen in Object Oriented Programming. This way, through the entity data model is possible to know what datapoints are available to access.
 
 ## Data Model Header Endpoint
 The data model header endpoint provides access to the following data:

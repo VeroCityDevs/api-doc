@@ -1,10 +1,10 @@
 # Live Cameras
 
-Vero City Platform can group real time cameras from different sources. The aplication API provides a RESTful endpoint to access real cameras data
+We4city Platform can group real time cameras from different sources. The aplication API provides a RESTful endpoint to access real cameras data
 and sources. 
 
 ## Data Acessible Through this Endpoint
-In the Vero City system, a real time camera consists of a specialization of a broader concept called "Resources". Each type of resource has its own attributes and characteristics, but all of them are classified under a category and subcategory structure. Real time cameras endpoint provides the following data for each camera:
+In the We4city system, a real time camera consists of a specialization of a broader concept called "Resources". Each type of resource has its own attributes and characteristics, but all of them are classified under a category and subcategory structure. Real time cameras endpoint provides the following data for each camera:
 
 |  Parameter | Description | Type |
 |---|---|---|
@@ -50,7 +50,7 @@ curl --request GET \
 
 ### Applying Filter
 
-Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://vero-city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need.
+Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://we4city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need.
 
 In particular, this example will return only cameras with streaming support:
 

@@ -1,5 +1,5 @@
 # Network Branches
-On Vero City Platform, every network is composed of one master branch and *n* other branches. When an entity is added to a network, actually it is linked to one of its branches. The API provides few endpoints regarding network branches, which are described on this section of the documentation.
+On We4city Platform, every network is composed of one master branch and *n* other branches. When an entity is added to a network, actually it is linked to one of its branches. The API provides few endpoints regarding network branches, which are described on this section of the documentation.
 
 ## Understanding the Master Branch
 The **master branch** is the main branch of every network and is used to represent the network as a whole. This means that every other branch of a network is "under" the master one. When an entity is linked to any branch of a network it is also connected to the master branch. This is also true when an entity is linked only to the network, with no branch specified. In those cases, the entity is simply being linked to the master branch of the network.

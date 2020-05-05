@@ -1,6 +1,6 @@
 # GEO Layers
 
-Vero City Platform has a geospatial database and the Platform Admin can upload many sources of geospatial data such WMS, geoTIFF, ShapeFile, KML,and others. 
+We4city Platform has a geospatial database and the Platform Admin can upload many sources of geospatial data such WMS, geoTIFF, ShapeFile, KML,and others. 
 The aplication API provides a RESTful endpoint to access each geo layer according to [GeoJSON Specification (RFC 7946)](https://tools.ietf.org/html/rfc7946)
 >  GeoJSON is a geospatial data interchange format based on JavaScript
 >     Object Notation (JSON).
@@ -51,7 +51,7 @@ which response is:
 ### Applying Filter
 
 
-Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://vero-city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need. 
+Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://we4city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need. 
 In particular, this example will return only geo layers with type "Point", with limit of 200.
 
 

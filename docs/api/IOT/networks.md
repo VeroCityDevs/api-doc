@@ -1,5 +1,5 @@
 # Network
-On Vero City Platform a network is an element of the system that can be used to group entities. Networks can be subdivided in "Branches" to provide further grouping capabilities.
+On We4city Platform a network is an element of the system that can be used to group entities. Networks can be subdivided in "Branches" to provide further grouping capabilities.
 
 ## Anatomy of a Network
 Networks are quite simple, being composed of id, description and a public indication. A network can possess from 1 to *n* branches, one of them being the **Master** branch, which is mandatory and every network possesses. When an entitiy is linked to a network, actually it is linked to the master branch.

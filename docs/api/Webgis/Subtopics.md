@@ -49,7 +49,7 @@ which response is:
 
 #### Filtering 
 
-Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://vero-city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need.
+Apart from providing the whole set of entities, this operation implements [filtering capabilities](https://we4city-api-docs.readthedocs.io/en/latest/advanced-filtering/index.html) in order to adjust the list of retrieved entities to what you need.
 
 In particular, this example will return topic ordering by description with limit of 3 topics.
 
@@ -120,7 +120,7 @@ curl -X GET \
   -H 'authorization: Bearer {{access_token}}' 
 ```
 
-The result set is the same described on [DOCS » WEBGIS » GEO LAYERS » LIST ALL LAYERS](https://vero-city-api-docs.readthedocs.io/en/latest/api/Webgis/Layers/index.html#list-all-layers)
+The result set is the same described on [DOCS » WEBGIS » GEO LAYERS » LIST ALL LAYERS](https://we4city-api-docs.readthedocs.io/en/latest/api/Webgis/Layers/index.html#list-all-layers)
 
 ```json
 {
